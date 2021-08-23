@@ -48,7 +48,7 @@ const getAnnee = async (req, res) => {
  and annee.ANNEEID=filiere.ANNEEID
  )as nbrNiveaux ,
  (select count(etudiant.CODEETUDIANT) from etudiant, filiere where
- etudiant.FILIEREID = filiere.FILIEREID )
+ etudiant.FILIEREID = filiere.FILIEREID and filiere.ANNEEID =  annee.ANNEEID )
  as nbrEtudiants
 from annee`;
             conn.query(qry, (err, result) => {

@@ -55,13 +55,11 @@ const addExistingEtudiant = async (req, res) => {
             const qry = `SELECT * FROM etudiant WHERE CODEETUDIANT like ${etudiantId}`;
             conn.query(qry, (err, result) => {
                 if (err) throw err;
-                console.log(result)
                 data = [selectedFiliere, result[0].NOMETUDIANT, result[0].PRENOMETUDIANT, result[0].NUMEROTELETUDIANT]
                 //Add 1st year student into 2nd year student
                 const qry2 = `INSERT IGNORE into etudiant (FILIEREID,NOMETUDIANT,PRENOMETUDIANT,NUMEROTELETUDIANT) values(?,?,?,?)`
                 conn.query(qry2, data, (err, result) => {
                     if (err) throw err;
-                    console.log('res', result.insertId)
                     const newId = result.insertId
                     const qry3 = `SELECT * FROM note WHERE CODEETUDIANT like ${etudiantId}`
                     conn.query(qry3, (err, result) => {

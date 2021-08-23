@@ -13,6 +13,7 @@ function AddExistingEtudiant({ currentEtudiant, selectedAnnee, annees, handleSea
     const handleClick = (e) => {
         try {
             var etudiantId = e.target.value
+            setEtudiants(etudiants.filter(etudiant => etudiant.CODEETUDIANT !== parseInt(etudiantId)))
             axios.post('/api/etudiant/exist', { etudiantId, selectedFiliere },
                 {
                     headers: {
@@ -34,7 +35,7 @@ function AddExistingEtudiant({ currentEtudiant, selectedAnnee, annees, handleSea
                     console.log('err:', err)
                 })
         } catch (error) {
-            throw error
+            console.log(error)
         }
 
     }

@@ -5,7 +5,6 @@ function AnneeReadOnlyRow({ year, handleEditClick, handleDeleteClick }) {
     return (
         < tr key={year.anneeId} >
             <td>{year.annee} </td>
-            <td>{year.nbrNiveaux} </td>
             <td>{year.nbrFilieres} </td>
             <td>{year.nbrEtudiants} </td>
             <td>

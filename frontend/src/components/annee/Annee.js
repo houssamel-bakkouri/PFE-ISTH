@@ -148,7 +148,6 @@ function Annee() {
                     <thead>
                         <tr>
                             <th>Année scolaire</th>
-                            <th>Nombre de niveaux scolaire</th>
                             <th>Nombre de filières</th>
                             <th>Nombre d'étudiants</th>
                             <th>Actions</th>

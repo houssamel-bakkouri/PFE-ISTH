@@ -243,9 +243,12 @@ function Etudiant() {
                     <Col></Col>
                     <Col></Col>
                     <Col>
-                        <Button className="pull-right" variant="success" onClick={handleShow}>
-                            Ajouter
-                        </Button>
+                        {(finalSelectedFiliere.current !== '') ?
+                            <Button className="pull-right" variant="success" onClick={handleShow}>
+                                Ajouter
+                            </Button>
+                            : ''
+                        }
                     </Col>
                 </Row>
                 <h1> </h1>

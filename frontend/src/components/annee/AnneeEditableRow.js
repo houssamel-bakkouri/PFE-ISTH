@@ -14,7 +14,6 @@ function AnneeEditableRow({ editFormData, handleEditFormChange, handleCancelClic
                     onChange={handleEditFormChange}
                 />
             </td>
-            <td>{editFormData.nbrNiveaux} </td>
             <td>{editFormData.nbrFilieres} </td>
             <td>{editFormData.nbrEtudiants} </td>
             <td >
