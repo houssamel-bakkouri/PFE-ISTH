@@ -7,7 +7,7 @@ function AddUser() {
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
     const [confirmedPassword, setConfirmedPassword] = useState('')
-    const [userType, setUserType] = useState('regular')
+    const userType = 'admin'
     const [err, setErr] = useState('')
 
     const handleSubmit = event => {
@@ -90,18 +90,6 @@ function AddUser() {
                                     </label>
                                 </div>
                                 <div className="text-danger">{err} </div>
-                                <div className="form-check form-check-inline" >
-                                    <input className="form-check-input" type="radio" name="userType" id="flexRadioDefault1" value='admin' onClick={() => setUserType('admin')} />
-                                    <label className="form-check-label" htmlFor="flexRadioDefault1">
-                                        Admin user
-                                    </label>
-                                </div>
-                                <div className="form-check form-check-inline">
-                                    <input className="form-check-input" type="radio" name="userType" id="flexRadioDefault2" value='regular' onClick={() => setUserType('regular')} />
-                                    <label className="form-check-label" htmlFor="flexRadioDefault2">
-                                        Regular user
-                                    </label>
-                                </div>
                                 <hr className="my-4" />
                                 <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit">
                                     Add

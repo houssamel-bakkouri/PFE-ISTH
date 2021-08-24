@@ -107,14 +107,6 @@ function Home() {
                 </Row>
                 <Row>
                     <Col className='d-inline-flex'>
-                        <p className="fs-5 fw-normal text-muted">Type d'utulisateur</p>
-                    </Col>
-                    <Col xs={8}>
-                        <Form.Control readOnly type="text" placeholder="regulier" value={user.userType} onChange={handleChange} />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col className='d-inline-flex'>
                         <p className="fs-5 fw-normal text-muted">Nom d'utilisateur</p>
                     </Col>
                     <Col xs={8}>

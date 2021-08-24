@@ -37,10 +37,9 @@ function UsersList() {
             <Table bordered hover variant='primary'>
                 <thead>
                     <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
                         <th>Login</th>
-                        <th>user Type</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,7 +49,6 @@ function UsersList() {
                                 <td>{user.firstName} </td>
                                 <td>{user.lastName} </td>
                                 <td>{user.username} </td>
-                                <td>{user.userType} </td>
                             </tr>
                         )
                     })}
