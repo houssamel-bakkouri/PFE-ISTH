@@ -7,7 +7,7 @@ const getEtudiant = async (req, res) => {
         try {
             const qry = `SELECT etudiant.* FROM etudiant inner join filiere on etudiant.FILIEREID = filiere.FILIEREID
      where
-     filiere.FILIEREID = ?`;
+     filiere.FILIEREID = ? order by etudiant.NOMETUDIANT`;
             conn.query(qry, [FILIEREID], (err, result) => {
                 conn.release();
                 if (err) throw err;
