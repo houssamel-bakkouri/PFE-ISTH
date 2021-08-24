@@ -48,8 +48,12 @@ const getNoteByEtud = async (req, res) => {
             const qry = `select note.*,module.* 
             from note inner join module 
             on note.MODULEID = module.MODULEID 
+            inner join filiere
+            on module.FILIEREID = filiere.FILIEREID 
+            inner join annee 
+            on filiere.ANNEEID =annee.ANNEEID
             where CODEETUDIANT like ?
-            ORDER by module.NOMMODULE `;
+            ORDER by annee.ANNEE,module.CODEMODULE `;
             conn.query(qry, [etudiantId], (err, result) => {
                 conn.release();
                 if (err) throw err;
