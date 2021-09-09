@@ -197,7 +197,7 @@ function RecapulatifTheorique() {
             avg += note
         });
         matiereAvg.push(avg / matiereAvg.length)
-        return matiereAvg.map(note => <td>{note}</td>)
+        return matiereAvg.map(note => <td>{note?.toFixed(2) ?? null}</td>)
     }
 
     return (
@@ -242,13 +242,13 @@ function RecapulatifTheorique() {
                                                     {getNotes(etudiant.CODEETUDIANT, matiere.MODULEID)}
                                                     <td>
                                                         {
-                                                            getMoyenneP(etudiant.CODEETUDIANT, matiere.MODULEID)
+                                                            getMoyenneP(etudiant.CODEETUDIANT, matiere.MODULEID)?.toFixed(2) ?? null
                                                         }
                                                     </td>
                                                 </>
                                             )
                                         })}
-                                        <td>{getMoyenneEtudiant(etudiant.CODEETUDIANT)}</td>
+                                        <td>{getMoyenneEtudiant(etudiant.CODEETUDIANT)?.toFixed(2) ?? null}</td>
                                     </tr>
                                 )
                             })}

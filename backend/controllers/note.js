@@ -5,7 +5,7 @@ const getNote = async (req, res) => {
     pool.getConnection((err, conn) => {
         if (err) throw err;
         try {
-            const qry = `select note.*, etudiant.* 
+            const qry = `select note.*, etudiant.NOMETUDIANT, etudiant.PRENOMETUDIANT
             from note 
             inner join 
             etudiant on 
@@ -15,6 +15,7 @@ const getNote = async (req, res) => {
             conn.query(qry, [matiereId, filiereId], (err, result) => {
                 conn.release();
                 if (err) throw err;
+                console.log(result)
                 res.send(JSON.stringify(result));
             });
         } catch (err) {

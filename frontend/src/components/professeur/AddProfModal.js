@@ -64,31 +64,31 @@ function AddProfModal() {
             <Modal.Body>
                 <form className="form-signin">
                     <div className="form-label-group">
-                        <input type="text" id="nom" name="nom" value={nom} onChange={(e) => setNom(e.target.value)} className="form-control" placeholder="Nom" required autoFocus />
+                        <input type="text" id="nom" name="nom" value={nom} onChange={(e) => setNom(e.target.value)} className="form-control" placeholder="Nom" required />
                         <label htmlFor="nom">
                             Nom
                         </label>
                     </div>
                     <div className="form-label-group">
-                        <input type="text" id="prenom" name="prenom" value={prenom} onChange={(e) => setPrenom(e.target.value)} className="form-control" placeholder="Prenom" required autoFocus />
+                        <input type="text" id="prenom" name="prenom" value={prenom} onChange={(e) => setPrenom(e.target.value)} className="form-control" placeholder="Prenom" required />
                         <label htmlFor="prenom">
                             Prenom
                         </label>
                     </div>
                     <div className="form-label-group">
-                        <input type="text" id="telephone" name="telephone" value={tel} onChange={(e) => setTel(e.target.value)} className="form-control" placeholder="Telephone" required autoFocus />
+                        <input type="text" id="telephone" name="telephone" value={tel} onChange={(e) => setTel(e.target.value)} className="form-control" placeholder="Telephone" required />
                         <label htmlFor="telephone">
                             Telephone
                         </label>
                     </div>
                     <div className="form-label-group">
-                        <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" placeholder="email" required autoFocus />
+                        <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" placeholder="email" required />
                         <label htmlFor="email">
                             Email
                         </label>
                     </div>
                     <div className="form-label-group">
-                        <input type="text" id="cin" name="cin" value={cin} onChange={(e) => setCin(e.target.value)} className="form-control" placeholder="CIN" required autoFocus />
+                        <input type="text" id="cin" name="cin" value={cin} onChange={(e) => setCin(e.target.value)} className="form-control" placeholder="CIN" required />
                         <label htmlFor="cin">
                             CIN
                         </label>

@@ -8,7 +8,7 @@ const addProf = async (req, res) => {
         if (err) throw err;
         try {
             const qry = `INSERT INTO professeur(NOMPROF,PRENOMPROF,TELPROFESSEUR,EMAILPROFESSEUR,CINPROF) VALUES(?,?,?,?,?)`;
-            conn.query(qry, [nom, prenom, parseInt(tel), email, cin], (err, result) => {
+            conn.query(qry, [nom, prenom, tel, email, cin], (err, result) => {
                 conn.release();
                 if (err) {
                     res.send(JSON.stringify({ err: true }))
@@ -47,7 +47,7 @@ const deleteProf = async (req, res) => {
             const qry = `DELETE FROM professeur WHERE NUMEROPROFESSEUR like ${req.params.profId}`;
             conn.query(qry, (err, result) => {
                 conn.release();
-                if (err) throw err;
+                if (err) res.end(JSON.stringify({ err: true, msg: 'Impossible de supprimer ce professeur, il est lié à une matière ' }));
                 res.send(JSON.stringify(result));
             });
         } catch (err) {

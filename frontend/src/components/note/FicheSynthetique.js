@@ -131,7 +131,7 @@ function FicheSynthetique() {
         })
             .then(res => {
                 setNotes(res.data)
-                console.log(notes)
+                console.log(res.data)
             }, (err) => {
                 axios.post('/api/token')
                     .then(res => {
@@ -182,6 +182,7 @@ function FicheSynthetique() {
     }
 
     const handleSave = () => {
+        console.log(notes)
         axios.put('/api/note', { notes },
             {
                 headers: {

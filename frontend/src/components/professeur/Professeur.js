@@ -10,6 +10,7 @@ export const showModalContext = React.createContext()
 function Professeur() {
     const [profs, setProfs] = useState([])
     const [show, setShow] = useState(false)
+    const [errMsg, setErrMsg] = useState(null)
     const profsRef = useRef(setProfs)
     const [accessToken, setAccessToken] = useState(localStorage.getItem('accessToken'))
 
@@ -106,6 +107,9 @@ function Professeur() {
             .then(res => {
                 console.log(res)
                 console.log(res.data)
+                if (res.data.err) {
+                    setErrMsg(res.data.msg)
+                }
             }, (err) => {
                 axios.post('/api/token')
                     .then(res => {
@@ -114,6 +118,10 @@ function Professeur() {
                         handleDeleteClick(profId)
                     }, err => window.location = "/")
             })
+    }
+
+    const showAlert = () => {
+        if (errMsg) return <div class="alert alert-danger" role="alert">{errMsg} </div>
     }
 
     useEffect(() => {
@@ -156,6 +164,8 @@ function Professeur() {
                     <Row>
                         <Col><h1> </h1></Col>
                     </Row>
+                    <h1> </h1>
+                    {showAlert()}
                 </Container>
             </showModalContext.Provider>
             <Form onSubmit={handleEditFormSubmit}>

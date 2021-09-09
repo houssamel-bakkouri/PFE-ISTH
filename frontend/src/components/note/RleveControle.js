@@ -341,7 +341,7 @@ function RleveControle() {
                                     />
                                 </td>
                                 <td>
-                                    {isNaN(calculeMoyenne(note)) ? null : calculeMoyenne(note)}
+                                    {isNaN(calculeMoyenne(note)) ? null : calculeMoyenne(note).toFixed(2)}
                                 </td>
                             </tr>
                         )

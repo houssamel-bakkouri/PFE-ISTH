@@ -198,7 +198,7 @@ function RecapulatifControle() {
             avg += note
         });
         matiereAvg.push(avg / matiereAvg.length)
-        return matiereAvg.map(note => <td>{note}</td>)
+        return matiereAvg.map(note => <td>{note?.toFixed(2) ?? null}</td>)
     }
 
     return (
@@ -243,13 +243,13 @@ function RecapulatifControle() {
                                                     {getNotes(etudiant.CODEETUDIANT, matiere.MODULEID)}
                                                     <td>
                                                         {
-                                                            getMoyenneC(etudiant.CODEETUDIANT, matiere.MODULEID)
+                                                            getMoyenneC(etudiant.CODEETUDIANT, matiere.MODULEID)?.toFixed(2) ?? null
                                                         }
                                                     </td>
                                                 </>
                                             )
                                         })}
-                                        <td>{getMoyenneEtudiant(etudiant.CODEETUDIANT)}</td>
+                                        <td>{getMoyenneEtudiant(etudiant.CODEETUDIANT)?.toFixed(2) ?? null}</td>
                                     </tr>
                                 )
                             })}

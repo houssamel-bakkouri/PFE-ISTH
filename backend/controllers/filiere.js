@@ -48,10 +48,12 @@ const deleteFiliere = async (req, res) => {
         if (err) throw err;
         try {
             const qry = `DELETE FROM filiere WHERE FILIEREID like ${req.params.filiereId}`;
-
             conn.query(qry, (err, result) => {
                 conn.release();
-                if (err) throw err;
+                if (err) {
+                    console.log(err)
+                    res.end(JSON.stringify({ err: true, msg: 'Impossible de supprimer un année non vide' }));
+                }
                 res.send(JSON.stringify(result));
             });
         } catch (err) {

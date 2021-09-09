@@ -46,6 +46,7 @@ function AddUser() {
                 console.log('err:', err)
                 setErr("Username already exist!")
             })
+        window.location = "/userslist"
     }
 
     return (
