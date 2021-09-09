@@ -228,10 +228,10 @@ function ModalitePassage() {
                             return (
                                 <tr>
                                     <td>{`${classement.nom} ${classement.prenom}`}</td>
-                                    <td>{classement.cc}</td>
-                                    <td>{classement.t}</td>
-                                    <td>{classement.p}</td>
-                                    <td>{classement.Moyenne}</td>
+                                    <td>{classement.cc?.toFixed(2) ?? null}</td>
+                                    <td>{classement.t?.toFixed(2) ?? null}</td>
+                                    <td>{classement.p?.toFixed(2) ?? null}</td>
+                                    <td>{classement.Moyenne?.toFixed(2) ?? null}</td>
                                     <td>{classement.Moyenne < 10 ? "NON ADMIS(E) EN 2 EME ANNEE" : "ADMIS(E) EN 2 EME ANNEE"}</td>
                                 </tr>
                             )

@@ -365,10 +365,10 @@ function ModaliteDiplome() {
                             <tbody>
                                 <tr>
                                     <td></td>
-                                    <td> {getClassement(selectedEtudiantId).cc}</td>
-                                    <td> {getClassement(selectedEtudiantId).t}</td>
-                                    <td> {getClassement(selectedEtudiantId).p}</td>
-                                    <td> {getClassement(selectedEtudiantId).ti}</td>
+                                    <td> {getClassement(selectedEtudiantId).cc?.toFixed(2) ?? null}</td>
+                                    <td> {getClassement(selectedEtudiantId).t?.toFixed(2) ?? null}</td>
+                                    <td> {getClassement(selectedEtudiantId).p?.toFixed(2) ?? null}</td>
+                                    <td> {getClassement(selectedEtudiantId).ti?.toFixed(2) ?? null}</td>
                                 </tr>
                                 <tr>
                                     <th>NOTE FINALE</th>

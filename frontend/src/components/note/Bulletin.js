@@ -281,10 +281,10 @@ function Bulletin() {
                                             <tr>
                                                 <td>{matiere.NOMMODULE}</td>
                                                 <td>{matiere.COEIFFICIENT}</td>
-                                                <td>{matiere.MoyenneC}</td>
-                                                <td>{matiere.TH}</td>
-                                                <td>{matiere.PR}</td>
-                                                <td>{getMoyenneMatiere(matiere)}</td>
+                                                <td>{matiere.MoyenneC?.toFixed(2) ?? null}</td>
+                                                <td>{matiere.TH?.toFixed(2) ?? null}</td>
+                                                <td>{matiere.PR?.toFixed(2) ?? null}</td>
+                                                <td>{getMoyenneMatiere(matiere)?.toFixed(2) ?? null}</td>
                                             </tr>
                                         )
                                     })
@@ -293,16 +293,16 @@ function Bulletin() {
                                     <th colSpan='2'>
                                         Moyenne pondérée en %
                                     </th>
-                                    <td>{getMoyennePonderee(matieres).cc}</td>
-                                    <td>{getMoyennePonderee(matieres).t}</td>
-                                    <td>{getMoyennePonderee(matieres).p}</td>
+                                    <td>{getMoyennePonderee(matieres).cc?.toFixed(2) ?? null}</td>
+                                    <td>{getMoyennePonderee(matieres).t?.toFixed(2) ?? null}</td>
+                                    <td>{getMoyennePonderee(matieres).p?.toFixed(2) ?? null}</td>
                                     <th></th>
                                 </tr>
                                 <tr>
                                     <th colSpan='2'>
                                         Moyenne Générale
                                     </th>
-                                    <td colSpan='3'>{getMoyenneGenerale(matieres)}</td>
+                                    <td colSpan='3'>{getMoyenneGenerale(matieres)?.toFixed(2) ?? null}</td>
                                     <td></td>
                                 </tr>
                             </tbody>
@@ -325,7 +325,7 @@ function Bulletin() {
                                         <tr>
                                             <td>{index + 1}</td>
                                             <td>{`${classement.nom} ${classement.prenom}`}</td>
-                                            <td>{classement.Moyenne}</td>
+                                            <td>{classement.Moyenne?.toFixed(2) ?? null}</td>
                                         </tr>
                                     )
                                 })
@@ -350,10 +350,10 @@ function Bulletin() {
                                     return (
                                         <tr>
                                             <td>{`${classement.nom} ${classement.prenom}`}</td>
-                                            <td>{classement.cc}</td>
-                                            <td>{classement.t}</td>
-                                            <td>{classement.p}</td>
-                                            <td>{classement.Moyenne}</td>
+                                            <td>{classement.cc?.toFixed(2) ?? null}</td>
+                                            <td>{classement.t?.toFixed(2) ?? null}</td>
+                                            <td>{classement.p?.toFixed(2) ?? null}</td>
+                                            <td>{classement.Moyenne?.toFixed(2) ?? null}</td>
                                         </tr>
                                     )
                                 })
