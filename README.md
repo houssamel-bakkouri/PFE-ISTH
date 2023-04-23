@@ -23,4 +23,4 @@ Ce projet a été réalisé dans le cadre de mon projet de fin d'étude (PFE) au
 5. Lancez le serveur en exécutant la commande `npm start`
 
 ## Auteur
-Ce projet a été réalisé par [votre nom ici].
+Ce projet a été réalisé par Houssam EL-BAKKOURI.
